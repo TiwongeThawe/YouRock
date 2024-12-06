@@ -23,5 +23,5 @@ To run this app, you will need:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/password-generator.git
-   cd password-generator
+   git clone https://github.com/TiwongeThawe/YouRock.git
+   cd YouRock
