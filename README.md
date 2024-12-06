@@ -1,4 +1,4 @@
-# Password Generator App
+# YouRock Password Generator
 
 ## Description
 
