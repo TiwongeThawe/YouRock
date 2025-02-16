@@ -13,7 +13,7 @@ install:
 
 # Run the app with Waitress
 run:
-	waitress-serve --port=$(PORT) $(APP)
+	gunicorn --bind 0.0.0.0:$PORT app:app
 
 # Clean up the environment (optional)
 clean:
