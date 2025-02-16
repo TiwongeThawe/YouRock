@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 import random
 import string
 
 app = Flask(__name__)
+
+CORS(app)  # Allow PHP to fetch data from Flask
 
 def generate_password(length, use_uppercase, use_numbers, use_specials):
     characters = string.ascii_lowercase
@@ -30,6 +33,14 @@ def generate():
     
     password = generate_password(length, use_uppercase, use_numbers, use_specials)
     return jsonify({"password": password})
+
+@app.route('/generate-password', methods=['GET'])
+def get_password():
+    length = request.args.get('length', default=12, type=int)
+    password = generate()
+    return jsonify({"password": password})
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
